@@ -43,20 +43,37 @@
         <img alt="Dr. Alina Filip Logo" src="./public/assets/sign.svg" class="nav-signature" />
       </a>
     </div>
+
+    <!-- Responsiveness -->
+
+     <div class="hamburger-menu">
+            <button class="hamburger-menu-icon">
+              <img
+                id="icon-hamburger"
+                src="./public/assets/burger.svg"
+                alt="Hamburger Menu"
+              />
+            </button>
+            <button class="close-menu-icon">
+              <img id="icon-close" src="./public/assets/ph_x.svg" alt="Close Menu" />
+            </button>
+          </div>
+
     <!-- Navbar -->
     <nav>
-      <ul>
+      <ul class="nav__links__list">
         <li><a href="#servicii">Servicii</a></li>
         <li><a href="#despre">Despre</a></li>
-        <li><a href="#programari">Programari</a></li>
+        <li><a href="#programari">Programări</a></li>
         <li><a href="#testimoniale">Testimoniale</a></li>
-        <li><a href="#intrebari">Intrebari</a></li>
+        <li><a href="#intrebari">Întrebări</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
     <!-- End Navbar -->
   </header>
   <main>
+    <!-- Hero section -->
     <section id="hero">
       <div class="hero__top">
         <div class="hero__left">
@@ -66,8 +83,8 @@
             Expertiză, compasiune și tehnologie de vârf pentru a asigura
             bunăstarea femeilor în toate etapele vieții.
           </p>
-          <button>
-            <a href="#programari">Programeaza-te acum</a></button>
+          <button class="btn">
+            <a href="#programari">Programează-te acum</a></button>
         </div>
         <div class="hero__right">
           <img src="./public/assets/flower.png" alt="" class="hero__flower" />
@@ -77,7 +94,7 @@
       <div class="hero__banner">
         <div class="hero__banner__el">
           <h3>16</h3>
-          <p>ani experienta</p>
+          <p>ani experiență</p>
         </div>
         <div class="hero__banner__el">
           <h3>100+</h3>
@@ -85,7 +102,7 @@
         </div>
         <div class="hero__banner__el">
           <h3>12</h3>
-          <p>specializari</p>
+          <p>specializări</p>
         </div>
       </div>
     </section>
@@ -99,7 +116,7 @@
       </p>
       <div class="carousel" aria-roledescription="carousel" aria-label="Gallery">
         <div class="carousel-inner" role="list">
-          <figure class="carousel-item">
+          <figure class="carousel-item display">
             <img src="./public/assets/ecografii.png" alt="Description of image 1" />
             <h4>Ecografii</h4>
             <p>
@@ -150,7 +167,7 @@
       <div class="hero__banner despre__banner">
         <div class="hero__banner__el">
           <h3>16</h3>
-          <p>ani experienta</p>
+          <p>ani experiență</p>
         </div>
         <div class="hero__banner__el">
           <h3>100+</h3>
@@ -158,13 +175,13 @@
         </div>
         <div class="hero__banner__el">
           <h3>12</h3>
-          <p>specializari</p>
+          <p>specializări</p>
         </div>
       </div>
     </section>
 
     <section id="programari">
-      <h2>Programari</h2>
+      <h2>Programări</h2>
       <div class="programari__form">
         <div class="programari__left">
           <p>
@@ -172,7 +189,7 @@
             pe mâini bune.
           </p>
           <p>
-            Vă rugăm să completați formularul din dreapta pentru a vă programa
+            Vă rugăm să completați formularul pentru a vă programa
             la o consultație medicală. Toate câmpurile sunt obligatorii, cu
             excepția celor marcate ca opționale.
           </p>
@@ -207,14 +224,14 @@
               <textarea id="additionalInfo" name="additionalInfo" rows="4"></textarea>
             </div>
 
-            <button>Confirma programarea</button>
+            <button class="btn">Confirmă programarea</button>
           </form>
           <div id="confirmationMessage"></div>
         </div>
       </div>
     </section>
     <section id="testimoniale">
-      <h2>Ce spun pacientii nostri</h2>
+      <h2>Ce spun pacienții noștri</h2>
       <div class="testimoniale__cards">
         <div class="testimoniale__card">
           <img src="./public/assets/LG.jpg" alt="">
@@ -228,7 +245,7 @@
       <img src="./public/assets/testimoniale-vector.svg" alt="" class="testimoniale-vector">
     </section>
     <section id="intrebari">
-      <h2>Intrebari frecvente</h2>
+      <h2>Întrebări frecvente</h2>
       <div class="intrebari__cards">
         <div class="intrebari__card">
           <h3>Care sunt tarifele pentru diferitele servicii?</h3>
@@ -281,7 +298,7 @@
           <img src="./public/assets/logo-neww.svg" alt="" class="footer-logo">
           <img src="./public/assets/sign.svg" alt="" class="footer-signature">
         </div>
-        <h4>Pasiune pentru sănătatea femeii
+        <h4>Pasiune pentru sănătatea femeii!
         </h4>
         <div class="footer__phone">
           <img src="./public/assets/ph_phone.svg" alt="">
@@ -296,9 +313,9 @@
         <ul>
           <li><a href="#servicii">Servicii</a></li>
           <li><a href="#despre">Despre</a></li>
-          <li><a href="#programari">Programari</a></li>
+          <li><a href="#programari">Programări</a></li>
           <li><a href="#testimoniale">Testimoniale</a></li>
-          <li><a href="#intrebari">Intrebari</a></li>
+          <li><a href="#intrebari">Întrebări</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </div>
@@ -313,10 +330,10 @@
       <div class=""></div>
     </div>
     <div class="footer__trademark">
-      <p>© 2024 Dr Alina Filip. All rights reserved.</p>
+      <p>© 2024 Dr Alina Filip. Toate drepturile rezervate.</p>
     </div>
   </footer>
-  <script src="../src/js/script.js"></script>
+  <script src="./script.js"></script>
 </body>
 
 </html>
