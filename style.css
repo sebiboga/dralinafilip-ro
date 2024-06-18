@@ -418,6 +418,10 @@ nav ul li a:hover {
   position: relative;
 }
 
+#confirmationMessage {
+  display: none;
+}
+
 #form {
   display: flex;
   flex-direction: column;
