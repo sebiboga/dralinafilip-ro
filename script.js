@@ -28,14 +28,18 @@ function mySubmitFunction(e) {
 
   // Display confirmation message
   let confirmationMessage = document.getElementById("confirmationMessage");
-  confirmationMessage.innerHTML =
-    "<p>Programarea a fost trimisă, vă vom suna în cel mai scurt timp pentru confirmare.</p>";
+  confirmationMessage.classList.add("visible");
 
   setTimeout(() => {
-    confirmationMessage.innerHTML = "";
-  }, 3000);
+    confirmationMessage.classList.remove("visible");
+  }, 4000);
 
   return false;
+}
+
+function closeConfirmation() {
+  let confirmationMessage = document.getElementById("confirmationMessage");
+  confirmationMessage.classList.remove("visible");
 }
 
 document.addEventListener("DOMContentLoaded", function () {
