@@ -31,6 +31,9 @@
   <link rel="icon" type="image/svg+xml" href="./public/favicon.svg">
   <link rel="icon" type="image/png" href="./public/favicon.png">
 
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
   <!-- CSS -->
   <link rel="stylesheet" href="./style.css" />
 </head>
@@ -46,18 +49,14 @@
 
     <!-- Responsiveness -->
 
-     <div class="hamburger-menu">
-            <button class="hamburger-menu-icon">
-              <img
-                id="icon-hamburger"
-                src="./public/assets/burger.svg"
-                alt="Hamburger Menu"
-              />
-            </button>
-            <button class="close-menu-icon">
-              <img id="icon-close" src="./public/assets/ph_x.svg" alt="Close Menu" />
-            </button>
-          </div>
+    <div class="hamburger-menu">
+      <button class="hamburger-menu-icon">
+        <img id="icon-hamburger" src="./public/assets/burger.svg" alt="Hamburger Menu" />
+      </button>
+      <button class="close-menu-icon">
+        <img id="icon-close" src="./public/assets/ph_x.svg" alt="Close Menu" />
+      </button>
+    </div>
 
     <!-- Navbar -->
     <nav>
@@ -114,35 +113,82 @@
         femeii înainte, în timpul și după nașterea copilului, precum și pe
         alte aspecte legate de sănătatea și estetica feminină.
       </p>
-      <div class="carousel" aria-roledescription="carousel" aria-label="Gallery">
-        <div class="carousel-inner" role="list">
-          <figure class="carousel-item display">
-            <img src="./public/assets/ecografii.png" alt="Description of image 1" />
-            <h4>Ecografii</h4>
-            <p>
-              Servicii de ecografie ginecologică și obstetricală, care sunt
-              esențiale pentru diagnosticarea și monitorizarea sănătății
-              femeilor în timpul sarcinii și în afara ei.
-            </p>
-          </figure>
-          <figure class="carousel-item">
-            <img src="./public/assets/sarcina.png" alt="Description of image 2" />
-            <h4>Supravegherea Sarcinii</h4>
-            <p>
-              Servicii destinate monitorizării și gestionării sarcinii,
-              incluzând monitorizarea activității cardiace a fătului și
-              stabilirea modalității optime de naștere.
-            </p>
-          </figure>
-          <figure class="carousel-item">
-            <img src="./public/assets/diagnostic.png" alt="Description of image 3" />
-            <h4>Diagnostic și Tratament Ginecologic</h4>
-            <p>
-              Servicii de diagnosticare și tratament pentru diverse afecțiuni
-              ginecologice, precum și proceduri chirurgicale minore.
-            </p>
-          </figure>
+      <!-- Slider main container -->
+      <!-- Swiper -->
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide first-item"></div>
+          <div class="swiper-slide">
+            <div class="">
+              <img src="./public/assets/ecografii.png" alt="Description of image 1" />
+              <h4>Ecografii</h4>
+              <p>
+                Servicii de ecografie ginecologică și obstetricală, care sunt
+                esențiale pentru diagnosticarea și monitorizarea sănătății
+                femeilor în timpul sarcinii și în afara ei.
+              </p>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="">
+              <img src="./public/assets/sarcina.png" alt="Description of image 2" />
+              <h4>Supravegherea Sarcinii</h4>
+              <p>
+                Servicii destinate monitorizării și gestionării sarcinii,
+                incluzând monitorizarea activității cardiace a fătului și
+                stabilirea modalității optime de naștere.
+              </p>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="">
+              <img src="./public/assets/diagnostic.png" alt="Description of image 3" />
+              <h4>Diagnostic și Tratament Ginecologic</h4>
+              <p>
+                Servicii de diagnosticare și tratament pentru diverse afecțiuni
+                ginecologice, precum și proceduri chirurgicale minore.
+              </p>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="">
+              <img src="./public/assets/interventii.png" alt="Description of image 1" />
+              <h4>Interventii Ginecologice</h4>
+              <p>
+                Aceste servicii cuprind intervenții chirurgicale minore și proceduri terapeutice pentru diverse
+                afecțiuni ginecologice.
+              </p>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="">
+              <img src="./public/assets/investigatii.png" alt="Description of image 1" />
+              <h4>Investigatii Ginecologice</h4>
+              <p>
+                Aceste servicii implică investigații și proceduri endoscopice pentru diagnosticarea și tratamentul
+                afecțiunilor ginecologice, inclusiv leziuni precanceroase și afecțiuni uterine.
+              </p>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="">
+              <img src="./public/assets/estetica.png" alt="Description of image 1" />
+              <h4>Estetica Ginecologică</h4>
+              <p>
+                Aceste servicii sunt destinate îmbunătățirii aspectului estetic al regiunii genitale feminine și al
+                feței, folosind tehnici și tratamente estetice non-chirurgicale.
+              </p>
+            </div>
+          </div>
+            <div class="swiper-slide first-item"></div>
         </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+        <!-- Add Navigation -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+      </div>
+
     </section>
     <section id="despre">
       <div class="despre__top">
@@ -226,7 +272,10 @@
 
             <button class="btn">Confirmă programarea</button>
           </form>
-          <div id="confirmationMessage"><span onclick="closeConfirmation()" class="close-form">x</span><p>Programarea a fost trimisă. Vă vom suna în cel mai scurt timp pentru confirmare.</p><p>Va mulțumim!</p></div>
+          <div id="confirmationMessage"><span onclick="closeConfirmation()" class="close-form">x</span>
+            <p>Programarea a fost trimisă. Vă vom suna în cel mai scurt timp pentru confirmare.</p>
+            <p>Va mulțumim!</p>
+          </div>
         </div>
       </div>
     </section>
@@ -333,7 +382,11 @@
       <p>© 2024 Dr Alina Filip. Toate drepturile rezervate.</p>
     </div>
   </footer>
-  <script src="./script.js"></script>
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <!-- Your Custom Script -->
+  <script src="script.js"></script>
 </body>
 
 </html>

@@ -1,6 +1,47 @@
 const serviciiDiv = document.querySelector(".servicii__carusel");
 
 document.addEventListener("DOMContentLoaded", function () {
+  const swiper = new Swiper(".mySwiper", {
+    slidesPerView: 3,
+    spaceBetween: 32,
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    autoplay: {
+      delay: 3000,
+    },
+    on: {
+      init: function () {
+        updateActiveSlide(this);
+      },
+      slideChange: function () {
+        updateActiveSlide(this);
+      },
+    },
+  });
+
+  function updateActiveSlide(swiper) {
+    const slides = swiper.slides;
+    const activeIndex = swiper.activeIndex;
+    const centerIndex =
+      activeIndex + Math.floor(swiper.params.slidesPerView / 2);
+
+    slides.forEach((slide, index) => {
+      slide.classList.remove("active-slide");
+    });
+
+    if (slides[centerIndex]) {
+      slides[centerIndex].classList.add("active-slide");
+    }
+  }
+});
+
+document.addEventListener("DOMContentLoaded", function () {
   const dateInput = document.getElementById("date");
   const today = new Date();
   const tomorrow = new Date(today);
