@@ -3,8 +3,11 @@ const serviciiDiv = document.querySelector(".servicii__carusel");
 document.addEventListener("DOMContentLoaded", function () {
   const swiper = new Swiper(".mySwiper", {
     slidesPerView: 3,
-    spaceBetween: 32,
-    slideToClickedSlide: true,
+    spaceBetween: 20,
+    // loop: true,
+    centerSlide: "true",
+    fade: "true",
+    grabCursor: "true",
 
     navigation: {
       nextEl: ".swiper-button-next",
@@ -17,30 +20,16 @@ document.addEventListener("DOMContentLoaded", function () {
     autoplay: {
       delay: 3000,
     },
-    on: {
-      init: function () {
-        console.log("Swiper initialized");
-      },
-      touchStart: function () {
-        console.log("Touch start");
-      },
-      touchEnd: function () {
-        console.log("Touch end");
-      },
-      // Add more events as needed
-    },
+
     breakpoints: {
-      1250: {
-        slidesPerView: 3,
-        spaceBetween: 120,
-      },
-      768: {
-        slidesPerView: 2,
-        spaceBetween: 10,
-      },
       0: {
         slidesPerView: 1,
-        spaceBetween: 10,
+      },
+      520: {
+        slidesPerView: 2,
+      },
+      950: {
+        slidesPerView: 3,
       },
     },
   });
