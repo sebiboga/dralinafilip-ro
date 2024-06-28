@@ -116,10 +116,12 @@ document.addEventListener("DOMContentLoaded", function () {
     const targetElement = document.getElementById(elementId);
 
     if (targetElement) {
-      console.log(targetElement);
-      const offsetTop = targetElement.offsetTop - navbarHeight;
-
+      console.log(targetElement.id);
+      let offsetTop = targetElement.offsetTop - navbarHeight;
       console.log(offsetTop);
+      if (targetElement.id === "despre" && window.innerWidth < 1100) {
+        offsetTop = targetElement.offsetTop - navbarHeight + 120;
+      }
 
       // Scroll to the element
       window.scrollTo({
@@ -130,7 +132,6 @@ document.addEventListener("DOMContentLoaded", function () {
   }
   const links = document.querySelectorAll(".nav__links__list li a");
 
-  console.log(links);
   links.forEach((link) => {
     link.addEventListener("click", function (event) {
       event.preventDefault();

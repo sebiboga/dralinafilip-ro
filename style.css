@@ -860,9 +860,10 @@ select {
   }
 
   #servicii {
-    margin-top: -86px;
-    padding-top: 0;
+    margin-top: -106px;
+    padding-top: 40px;
     margin-bottom: -156px;
+    height: 700px;
   }
 
   .servicii__subtitle {
@@ -900,7 +901,8 @@ select {
   }
 
   #despre {
-    padding-top: 64px;
+    margin-top: -114px;
+    padding-top: 50px;
   }
 
   .despre__top {
@@ -910,6 +912,7 @@ select {
 
   .despre__right {
     padding: 0 24px;
+    margin-top: 100px;
   }
 
   .despre__left {
