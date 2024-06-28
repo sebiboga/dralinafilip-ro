@@ -46,8 +46,6 @@ document.addEventListener("DOMContentLoaded", function () {
   const day = String(tomorrow.getDate()).padStart(2, "0");
 
   const minDate = `${year}-${month}-${day}`;
-
-  console.log(minDate);
   dateInput.min = minDate;
 });
 
@@ -83,13 +81,26 @@ document.addEventListener("DOMContentLoaded", function () {
   const navLinksList = document.querySelector(".nav__links__list");
   const navLinks = document.querySelectorAll(".nav__links__list a");
   const logoEl = this.documentElement.querySelector(".nav-logo-container");
+  const btnNavAdded = document.querySelector(".nav_btn_added");
+
+  if (window.innerWidth < 1100) {
+    btnNavAdded.classList.toggle("invisible");
+    btnNavAdded.addEventListener("click", closeMenu);
+  }
 
   function closeMenu() {
     if (window.innerWidth < 1100) {
+      console.log("close menu");
       navLinksList.style.display = "none";
       hamburgerMenuIcon.style.display = "block";
       closeMenuIcon.style.display = "none";
     }
+  }
+
+  if (window.innerWidth < 1100 && hamburgerMenuIcon.style.display === "block") {
+    document.body.classList.add("overflow-y-hidden");
+  } else {
+    document.body.classList.remove("overflow-y-hidden");
   }
 
   hamburgerMenuIcon.addEventListener("click", function () {
@@ -116,9 +127,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const targetElement = document.getElementById(elementId);
 
     if (targetElement) {
-      console.log(targetElement.id);
       let offsetTop = targetElement.offsetTop - navbarHeight;
-      console.log(offsetTop);
       if (targetElement.id === "despre" && window.innerWidth < 1100) {
         offsetTop = targetElement.offsetTop - navbarHeight + 120;
       }
@@ -130,9 +139,18 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     }
   }
-  const links = document.querySelectorAll(".nav__links__list li a");
+  const navLinksA = document.querySelectorAll(".nav__links__list li a");
+  const footerLinksA = document.querySelectorAll(".footer__links__list li a");
 
-  links.forEach((link) => {
+  navLinksA.forEach((link) => {
+    link.addEventListener("click", function (event) {
+      event.preventDefault();
+      const targetId = this.getAttribute("href").substring(1); // Remove '#'
+      scrollToElement(targetId);
+    });
+  });
+
+  footerLinksA.forEach((link) => {
     link.addEventListener("click", function (event) {
       event.preventDefault();
       const targetId = this.getAttribute("href").substring(1); // Remove '#'
