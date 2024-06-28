@@ -133,7 +133,6 @@ table {
 }
 
 body {
-  /* max-width: 1440px; */
   margin: 0 auto;
   font-family: "Open Sans", sans-serif;
 }
@@ -184,13 +183,17 @@ p {
 /* Header section */
 
 header {
-  max-width: 1440px;
-  margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px 124px;
+  padding: 10px calc((100vw - 1440px) / 2 + 124px);
+  /* padding: 10px 124px; */
   position: relative;
+  position: sticky;
+  top: 0;
+  background-color: var(--white);
+  z-index: 100;
+  box-shadow: 0px 12px 7px -15px var(--pink);
 }
 
 .nav-logo-container {
@@ -198,10 +201,6 @@ header {
   align-items: start;
   justify-content: center;
   gap: 12px;
-}
-
-.nav-logo-container:hover {
-  transform: scale(1.01);
 }
 
 .nav-logo {
@@ -218,12 +217,12 @@ nav ul {
   height: 48px;
 }
 nav ul li a {
-  transition: all 0.4s ease-in-out 0s;
+  transition: color 0.4s ease-in-out 0s;
 }
 
 nav ul li a:hover {
   color: var(--pink);
-  transition: all 0.3s ease-out;
+  transition: color 0.3s ease-out;
 }
 
 .header-logo {
@@ -311,8 +310,9 @@ nav ul li a:hover {
 #servicii {
   max-width: 1440px;
   margin: 0 auto;
-  padding-top: 88px;
-  height: 790px;
+  padding-top: 44px;
+  margin-top: 44px;
+  height: 600px;
 }
 
 .servicii__subtitle {
@@ -389,7 +389,8 @@ nav ul li a:hover {
 /* Despre section */
 
 #despre {
-  padding-top: 150px;
+  padding-top: 100px;
+  margin-top: 70px;
   position: relative;
 }
 
@@ -420,13 +421,13 @@ nav ul li a:hover {
   gap: 16px;
   align-items: center;
   text-align: center;
-  padding: 80px;
+  padding: 70px;
 }
 
 /* Programari section */
 
 #programari {
-  padding: 140px;
+  padding: 80px;
   max-width: 1440px;
   margin: 0 auto;
   background-color: var(--white);
@@ -499,7 +500,8 @@ select {
   flex-direction: column;
   gap: 200px;
   position: relative;
-  margin-bottom: 300px;
+  margin-bottom: 200px;
+  padding-top: 80px;
 }
 
 .testimoniale__card {
@@ -537,7 +539,7 @@ select {
 
 .testimoniale-vector {
   position: absolute;
-  top: -60px;
+  top: 10px;
   z-index: -3;
   transform: scale(0.9);
 }
@@ -551,6 +553,7 @@ select {
   max-width: 1440px;
   margin: 0 auto;
   margin-bottom: 138px;
+  padding-top: 100px;
 }
 
 .intrebari__cards {
@@ -669,7 +672,7 @@ select {
 
 .footer__links ul li a:hover {
   color: var(--pink);
-  transition: all 0.3s ease-out;
+  transition: color 0.3s ease-out;
 }
 
 .footer__program {

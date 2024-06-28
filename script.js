@@ -85,9 +85,11 @@ document.addEventListener("DOMContentLoaded", function () {
   const logoEl = this.documentElement.querySelector(".nav-logo-container");
 
   function closeMenu() {
-    navLinksList.style.display = "none";
-    hamburgerMenuIcon.style.display = "block";
-    closeMenuIcon.style.display = "none";
+    if (window.innerWidth < 1100) {
+      navLinksList.style.display = "none";
+      hamburgerMenuIcon.style.display = "block";
+      closeMenuIcon.style.display = "none";
+    }
   }
 
   hamburgerMenuIcon.addEventListener("click", function () {
@@ -107,6 +109,35 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   logoEl.addEventListener("click", closeMenu);
+
+  const navbarHeight = 68;
+
+  function scrollToElement(elementId) {
+    const targetElement = document.getElementById(elementId);
+
+    if (targetElement) {
+      console.log(targetElement);
+      const offsetTop = targetElement.offsetTop - navbarHeight;
+
+      console.log(offsetTop);
+
+      // Scroll to the element
+      window.scrollTo({
+        top: offsetTop,
+        behavior: "smooth",
+      });
+    }
+  }
+  const links = document.querySelectorAll(".nav__links__list li a");
+
+  console.log(links);
+  links.forEach((link) => {
+    link.addEventListener("click", function (event) {
+      event.preventDefault();
+      const targetId = this.getAttribute("href").substring(1); // Remove '#'
+      scrollToElement(targetId);
+    });
+  });
 });
 
 const intrebariCards = document.querySelectorAll(".intrebari__card");
@@ -129,3 +160,5 @@ const toggleArrows = (rightArrow, downArrow, intrebariAnswer) => {
   downArrow.classList.toggle("invisible");
   intrebariAnswer.classList.toggle("invisible");
 };
+
+// Add event listeners to each link
