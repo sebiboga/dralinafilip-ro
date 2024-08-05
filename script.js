@@ -9,6 +9,13 @@ const intrebariCards = document.querySelectorAll(".intrebari__card");
 
 // Mobile version
 
+const hamburgerMenuIcon = document.querySelector(".hamburger-menu-icon");
+const closeMenuIcon = document.querySelector(".close-menu-icon");
+const navLinksList = document.querySelector(".nav__links__list");
+const navLinks = document.querySelectorAll(".nav__links__list a");
+const logoEl = document.querySelector(".nav-logo-container");
+const btnNavAdded = document.querySelector(".nav_btn_added");
+
 // Set minimum date for the form
 document.addEventListener("DOMContentLoaded", function () {
   const today = new Date();
@@ -121,32 +128,35 @@ const toggleArrows = (rightArrow, downArrow, intrebariAnswer) => {
 
 // Mobile nav
 
-document.addEventListener("DOMContentLoaded", function () {
-  const hamburgerMenuIcon = document.querySelector(".hamburger-menu-icon");
-  const closeMenuIcon = document.querySelector(".close-menu-icon");
-  const navLinksList = document.querySelector(".nav__links__list");
-  const navLinks = document.querySelectorAll(".nav__links__list a");
-  const logoEl = document.querySelector(".nav-logo-container");
-  const btnNavAdded = document.querySelector(".nav_btn_added");
-
+function closeMenu() {
   if (window.innerWidth < 1100) {
-    btnNavAdded.classList.toggle("invisible");
-    btnNavAdded.addEventListener("click", closeMenu);
+    navLinksList.style.display = "none";
+    hamburgerMenuIcon.style.display = "block";
+    closeMenuIcon.style.display = "none";
+    document.body.style.overflow = "visible";
   }
+}
 
-  function closeMenu() {
-    if (window.innerWidth < 1100) {
-      navLinksList.style.display = "none";
-      hamburgerMenuIcon.style.display = "block";
-      closeMenuIcon.style.display = "none";
-      document.body.style.overflow = "visible";
-    }
-  }
+const goToTopEl = document.querySelector("#goToTop");
 
-  if (window.innerWidth < 1100 && hamburgerMenuIcon.style.display === "block") {
-    document.body.classList.add("overflow-y-hidden");
+// Go to top arrow
+window.addEventListener("scroll", function () {
+  const serviciiTarget = document.getElementById("hero");
+  if (window.scrollY > serviciiTarget.offsetTop + serviciiTarget.offsetHeight) {
+    goToTopEl.style.display = "block";
   } else {
-    document.body.classList.remove("overflow-y-hidden");
+    goToTopEl.style.display = "none";
+  }
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  if (window.innerWidth < 1100) {
+    btnNavAdded.classList.remove("invisible");
+    btnNavAdded.addEventListener("click", closeMenu);
+    // document.body.classList.add("overflow-y-hidden");
+  } else {
+    btnNavAdded.classList.add("invisible");
+    // document.body.classList.add("overflow-y-hidden");
   }
 
   hamburgerMenuIcon.addEventListener("click", function () {
