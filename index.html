@@ -5,19 +5,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dr. Alina Filip - Cabinet Ginecologic și Estetică în România</title>
-
-  <!-- Meta description -->
   <meta name="description"
     content="Cabinetul nostru ginecologic și estetic din România oferă servicii de înaltă calitate în domeniul sănătății femeilor. Contactați-ne pentru consultații și tratamente personalizate." />
-
-  <!-- Meta keywords (optional) -->
   <meta name="keywords"
     content="cabinet ginecologic, cabinet estetic, romania, servicii de sănătate pentru femei, consultații medicale, tratamente estetice" />
-
-  <!-- Meta author (optional) -->
   <meta name="author" content="Dr. Alina Filip" />
-
-  <!-- Meta robots (optional) -->
   <meta name="robots" content="index, follow" />
 
   <!-- Fonts -->
@@ -248,7 +240,7 @@
           <p>Mulțumim!</p>
         </div>
         <div class="programari__right">
-          <form id="form" aria-describedby="formInstructions" onsubmit="return mySubmitFunction(event)">
+          <form id="form" aria-describedby="formInstructions" action="https://formspree.io/f/xnnadrga" method="POST">
             <div class="form__field">
               <label for="name">Nume complet <span>*</span></label>
               <input type="text" id="name" name="name" placeholder="Alexandra Gheorghe" required aria-required="true" />
@@ -271,11 +263,10 @@
               <label for="additionalInfo">Observații suplimentare</label>
               <textarea id="additionalInfo" name="additionalInfo" rows="4"></textarea>
             </div>
-
             <button class="btn">Confirmă programarea</button>
           </form>
-          <div id="confirmationMessage"><span onclick="closeConfirmation()" class="close-form">x</span>
-            <p>Programarea a fost trimisă. Vă vom suna în cel mai scurt timp pentru confirmare.</p>
+          <div id="confirmationMessage" class="invisible"><span onclick="closeConfirmation()" class="close-form">x</span>
+            <p id="confirmationText"></p>
             <p>Va mulțumim!</p>
           </div>
         </div>
